@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<h1>Libros</h1>
+<button><%= link_to "Nuevo libro", new_libro_path %></button>
+<div class="table-responsive libros">
+  <table class="table table-fluid">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Paginas</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @libros.each do |libro| %>
+        <tr class="">
+          <td scope="row"><%= libro.nombre%></td>
+          <td scope="row">$<%= libro.precio%></td>
+          <td scope="row"><%= libro.paginas%></td>
+          <td scope="row"><%= libro.descripcion%></td>
+          <td><button><%= link_to "Ver este Libro", libro %></button></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
